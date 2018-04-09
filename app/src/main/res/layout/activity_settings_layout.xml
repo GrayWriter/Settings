@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.graymonkey.demo.settings.preferenceview.ObservableScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="none"
+    android:id="@+id/scroll">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+           >
+
+            <!--do not change the key of SettingItemView-->
+            <!--系统设置-->
+            <com.graymonkey.demo.settings.preferenceview.SettingItemView
+                android:id="@+id/settings_system"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/lscreen_item_bg"
+                android:icon="@drawable/ic_settings_system_setting"
+                android:title="@string/system_settings"
+                android:foreground="?android:attr/selectableItemBackground"/>
+
+            <!--定制设置模块-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+
+                <com.graymonkey.demo.settings.preferenceview.ListSettingItemView
+                    android:id="@+id/settings_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:entries="@array/settings_layout_summary"
+                    android:entryValues="@array/settings_layout_value"
+                    android:icon="@drawable/ic_settings_layout"
+                    android:key="pref_layout"
+                    android:title="@string/settings_layout_title"
+                    android:foreground="?android:attr/selectableItemBackground"/>
+
+                <com.graymonkey.demo.settings.preferenceview.SwitchSettingItemView
+                    android:id="@+id/settings_shake"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:icon="@drawable/ic_settings_shake"
+                    android:key="pref_shake"
+                    android:summary="@string/settings_shake_to_realign_summary"
+                    android:title="@string/settings_shake_to_realign_title"
+                    android:defaultValue="true"
+                    android:widgetLayout="@layout/custom_preference_switch"
+                    android:foreground="?android:attr/selectableItemBackground"/>
+
+                <com.graymonkey.demo.settings.preferenceview.SwitchSettingItemView
+                    android:id="@+id/settings_left_screen"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:icon="@drawable/ic_settings_left_screen"
+                    android:key="pref_leftscreen"
+                    android:summary="@string/settings_leftscreen_summary"
+                    android:title="@string/settings_leftscreen_title"
+                    android:defaultValue="true"
+                    android:widgetLayout="@layout/custom_preference_switch"
+                    android:foreground="?android:attr/selectableItemBackground"/>
+
+                <com.graymonkey.demo.settings.preferenceview.SettingItemView
+                    android:id="@+id/settings_search"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:icon="@drawable/ic_settings_search"
+                    android:title="@string/abandoned_search"
+                    android:foreground="?android:attr/selectableItemBackground"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+</com.graymonkey.demo.settings.preferenceview.ObservableScrollView>
